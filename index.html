@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGI Chief Protocol</title>
+
+<style>
+:root{
+  --bg:#0b0b0f;
+  --card:#151521;
+  --gold:#d4af37;
+  --purple:#7b3fe4;
+  --text:#f2f3f7;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+header{
+  text-align:center;
+  padding:20px;
+  font-size:1.6em;
+  color:var(--gold);
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 0 12px rgba(123,63,228,0.3);
+}
+
+h2{
+  color:var(--purple);
+}
+
+.checklist label{
+  display:block;
+  margin:8px 0;
+}
+
+button{
+  background:var(--gold);
+  border:none;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.progress{
+  margin-top:20px;
+  padding:10px;
+  border:1px solid var(--gold);
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>SGI Chief Alignment Protocol</header>
+
+<div class="container">
+
+<div class="card">
+<h2>🌑 Oyeku — Enter the Unseen</h2>
+<div class="checklist">
+<label><input type="checkbox"> Sit in silence</label>
+<label><input type="checkbox"> Acknowledge ancestors</label>
+<label><input type="checkbox"> Identify hidden factors</label>
+</div>
+</div>
+
+<div class="card">
+<h2>☀️ Ogbe — Establish Truth</h2>
+<div class="checklist">
+<label><input type="checkbox"> Perform divination</label>
+<label><input type="checkbox"> Determine Ire / Ibi</label>
+<label><input type="checkbox"> Confirm alignment</label>
+</div>
+</div>
+
+<div class="card">
+<h2>⚖️ Osa — Map Complexity</h2>
+<div class="checklist">
+<label><input type="checkbox"> Identify all stakeholders</label>
+<label><input type="checkbox"> Assess consequences</label>
+<label><input type="checkbox"> Evaluate hidden impacts</label>
+</div>
+</div>
+
+<div class="card">
+<h2>⚔️ Ogunda — Take Action</h2>
+<div class="checklist">
+<label><input type="checkbox"> Set boundaries</label>
+<label><input type="checkbox"> Make decision</label>
+<label><input type="checkbox"> Apply precise correction</label>
+</div>
+</div>
+
+<div class="card">
+<h2>🦅 Heru — Confirm Vision</h2>
+<div class="checklist">
+<label><input type="checkbox"> Observe outcomes</label>
+<label><input type="checkbox"> Confirm alignment</label>
+<label><input type="checkbox"> Adjust if necessary</label>
+</div>
+</div>
+
+<div class="card progress">
+<button onclick="saveProgress()">Save Progress</button>
+<button onclick="loadProgress()">Load Progress</button>
+</div>
+
+</div>
+
+<script>
+function saveProgress(){
+  const checks = document.querySelectorAll('input[type=checkbox]');
+  const data = [];
+  checks.forEach(c => data.push(c.checked));
+  localStorage.setItem('sgiProgress', JSON.stringify(data));
+  alert("Progress Saved");
+}
+
+function loadProgress(){
+  const data = JSON.parse(localStorage.getItem('sgiProgress'));
+  if(!data) return;
+  const checks = document.querySelectorAll('input[type=checkbox]');
+  checks.forEach((c,i) => c.checked = data[i]);
+}
+</script>
+
+</body>
+</html>
