@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SGI Chief Alignment Protocol</title>
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --card:#151521;
+      --gold:#d4af37;
+      --purple:#7b3fe4;
+      --text:#f2f3f7;
+      --muted:#c7c9d3;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    header{
+      text-align:center;
+      padding:28px 16px 18px;
+      color:var(--gold);
+    }
+
+    header h1{
+      margin:0 0 8px;
+      font-size:2rem;
+    }
+
+    header p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .container{
+      max-width:950px;
+      margin:0 auto;
+      padding:20px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(212,175,55,.18);
+      border-radius:18px;
+      padding:22px;
+      margin-bottom:20px;
+      box-shadow:0 0 16px rgba(123,63,228,.18);
+    }
+
+    h2{
+      margin-top:0;
+      color:var(--purple);
+    }
+
+    h3{
+      color:var(--gold);
+      margin-bottom:8px;
+    }
+
+    .checklist label{
+      display:block;
+      margin:10px 0;
+      cursor:pointer;
+    }
+
+    .checklist input{
+      margin-right:10px;
+      transform:scale(1.1);
+    }
+
+    .meta{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    button{
+      background:var(--gold);
+      color:#111;
+      border:none;
+      padding:11px 16px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    button:hover{
+      opacity:.92;
+    }
+
+    .progress-box{
+      margin-top:16px;
+      padding:14px;
+      border:1px solid rgba(212,175,55,.35);
+      border-radius:12px;
+      color:var(--muted);
+    }
+
+    .footer-note{
+      text-align:center;
+      color:var(--muted);
+      padding:10px 0 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SGI Chief Alignment Protocol</h1>
+    <p>Stabilizing Authority Through Divination and Action</p>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Phase 1 — Oyeku</h2>
+      <div class="meta">Enter the unseen before action.</div>
+      <h3>Checklist</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> Sit in silence before deciding</label>
+        <label><input type="checkbox"> Acknowledge ancestors / Egun</label>
+        <label><input type="checkbox"> Ask what is hidden</label>
+        <label><input type="checkbox"> Delay public action until insight forms</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Phase 2 — Ogbe</h2>
+      <div class="meta">Establish truth and alignment.</div>
+      <h3>Checklist</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> Perform divination</label>
+        <label><input type="checkbox"> Determine Ire, Ibi, or Conditional Ire</label>
+        <label><input type="checkbox"> Confirm alignment with Ori and destiny</label>
+        <label><input type="checkbox"> Return to Oyeku if clarity is incomplete</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Phase 3 — Osa</h2>
+      <div class="meta">Map complexity before acting.</div>
+      <h3>Checklist</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> Identify all visible stakeholders</label>
+        <label><input type="checkbox"> Identify unseen or indirect influences</label>
+        <label><input type="checkbox"> Assess secondary consequences</label>
+        <label><input type="checkbox"> Consider what happens after the decision</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Phase 4 — Ogunda</h2>
+      <div class="meta">Apply corrective force with precision.</div>
+      <h3>Checklist</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> Set necessary boundaries</label>
+        <label><input type="checkbox"> Make the decision clearly</label>
+        <label><input type="checkbox"> Remove misalignment without excess force</label>
+        <label><input type="checkbox"> Put structure in place</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Phase 5 — Heru</h2>
+      <div class="meta">Confirm whether the action increased alignment.</div>
+      <h3>Checklist</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> Observe outcomes carefully</label>
+        <label><input type="checkbox"> Check whether confusion decreased</label>
+        <label><input type="checkbox"> Confirm whether alignment increased</label>
+        <label><input type="checkbox"> Adjust if needed</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Save Progress</h2>
+      <div class="buttons">
+        <button onclick="saveProgress()">Save Progress</button>
+        <button onclick="loadProgress()">Load Progress</button>
+        <button onclick="clearProgress()">Clear Progress</button>
+      </div>
+      <div class="progress-box" id="statusBox">No progress loaded yet.</div>
+    </div>
+
+    <div class="card">
+      <h2>Core Principle</h2>
+      <p><strong>Do not act to gain authority. Act to ensure authority stands.</strong></p>
+      <p><strong>Full Loop:</strong> OYEKU → OGBE → OSA → OGUNDA → HERU</p>
+    </div>
+
+    <div class="footer-note">
+      SGI Chief Alignment Protocol
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = 'sgi_chief_alignment_progress';
+
+    function getChecks() {
+      return document.querySelectorAll('input[type="checkbox"]');
+    }
+
+    function updateStatus(message) {
+      document.getElementById('statusBox').textContent = message;
+    }
+
+    function saveProgress() {
+      const checks = getChecks();
+      const data = Array.from(checks).map(c => c.checked);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      const total = data.length;
+      const done = data.filter(Boolean).length;
+      updateStatus(`Progress saved. ${done} of ${total} items completed.`);
+    }
+
+    function loadProgress() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) {
+        updateStatus('No saved progress found.');
+        return;
+      }
+      const data = JSON.parse(raw);
+      const checks = getChecks();
+      checks.forEach((c, i) => {
+        c.checked = !!data[i];
+      });
+      const total = checks.length;
+      const done = Array.from(checks).filter(c => c.checked).length;
+      updateStatus(`Progress loaded. ${done} of ${total} items completed.`);
+    }
+
+    function clearProgress() {
+      localStorage.removeItem(STORAGE_KEY);
+      getChecks().forEach(c => c.checked = false);
+      updateStatus('Saved progress cleared.');
+    }
+  </script>
+</body>
+</html>
